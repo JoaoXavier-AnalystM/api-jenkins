@@ -18,8 +18,7 @@ pipeline {
         stage('Docker Build Image') {
             steps {
                 script {
-                    dockerapp = docker.build("joaotixavier/testeapi:${env.BUILD_ID}",
-                      )
+                    dockerapp = docker.build("joaotixavier/testeapi:${env.BUILD_ID}",'.')
                 }
             }
         }
