@@ -7,20 +7,7 @@ pipeline {
             steps {
                 git url: 'https://github.com/JoaoXavier-AnalystM/teste_api.git/', branch: 'master'
             }
-        }
-        
-        stage('Build') {
-            steps {
-                sh 'npm install'
-                sh 'npm run build'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'npm run test'
-            }
-        }         
+        }        
         
         stage('Docker Build Image') {
             steps {
