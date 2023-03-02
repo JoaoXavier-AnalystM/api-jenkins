@@ -9,6 +9,11 @@ pipeline {
             }
         }
         
+        stage('Test') {
+            steps {
+                sh 'npm run test'
+            }
+        } 
         
         stage('Docker Build Image') {
             steps {
@@ -18,18 +23,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Build') {
-            steps {
-                sh 'npm i'
-            }
-        }
-        
-        stage('Test') {
-            steps {
-                sh 'npm run test'
-            }
-        } 
 
         stage('Docker Push Image') {
             steps {
