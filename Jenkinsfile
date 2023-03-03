@@ -9,14 +9,6 @@ pipeline {
             }
         }
         
-        stage('Test') {
-            steps {
-                echo 'Building..'
-                sh 'npm install'
-                
-            }
-        } 
-        
         stage('Docker Build Image') {
             steps {
                 script {
